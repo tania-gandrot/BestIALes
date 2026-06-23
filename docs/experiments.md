@@ -23,3 +23,22 @@ Questions suivantes :
 - Ajouter une perception ?
 - Ajouter une direction ?
 - Ajouter un comportement orienté ?
+
+## Expérience 002 - Augmentation des ressources
+
+Hypothèse :
+Une plus grande densité de nourriture augmente la probabilité de survie d'un organisme se déplaçant aléatoirement.
+
+Modification :
+Passage de 50 à 200 unités de nourriture.
+
+Code :
+for(let i=0;i<200;i++)
+
+Résultat :
+À observer.
+
+Mesures possibles :
+- Temps de survie
+- Énergie moyenne
+- Nombre de nourritures consommées
