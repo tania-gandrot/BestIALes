@@ -56,3 +56,20 @@ Une mobilité accrue augmente les chances de rencontrer de la nourriture.
 
 Résultat :
 À observer.
+
+## Expérience 004 - Perception de la nourriture
+
+Objectif :
+Permettre à l'organisme d'identifier la ressource la plus proche car il échoue trop rapidement.
+
+Modification :
+Ajout de la fonction findClosestFood().
+
+Résultat :
+L'organisme dispose désormais d'une information sur son environnement.
+
+Observation :
+La perception existe mais n'influence pas encore le comportement.
+
+Prochaine étape :
+Utiliser cette information pour orienter le déplacement.
