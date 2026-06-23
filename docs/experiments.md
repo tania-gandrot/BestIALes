@@ -105,3 +105,19 @@ L'organisme alterne désormais entre :
 
 Observation :
 Le comportement paraît plus naturel et la survie augmente.
+
+## Expérience 007 - Réduction des ressources
+
+Modification :
+Nombre de nourritures :
+200 → 100
+
+Hypothèse :
+La BestIAle devrait encore survivre grâce à sa capacité de perception et de poursuite.
+
+Résultat :
+À observer.
+
+Questions :
+- Existe-t-il un seuil critique de nourriture ?
+- À partir de quelle densité la BestIAle ne peut-elle plus compenser son coût énergétique ?
