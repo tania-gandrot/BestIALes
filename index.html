@@ -55,11 +55,18 @@ function findClosestFood() {
 
         let d = distance(bestiale, food);
 
+        if(d > 100){
+            continue;
+        }
+
         if(d < bestDistance){
             bestDistance = d;
             closest = food;
         }
     }
+
+    return closest;
+}
 
     return closest;
 }
