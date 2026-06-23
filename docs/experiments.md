@@ -73,3 +73,19 @@ La perception existe mais n'influence pas encore le comportement.
 
 Prochaine étape :
 Utiliser cette information pour orienter le déplacement.
+
+## Expérience 005 - Vision limitée
+
+Modification :
+La nourriture n'est détectée que dans un rayon de 100 pixels.
+
+Code :
+if(d > 100){
+    continue;
+}
+
+Hypothèse :
+Une perception locale produit un comportement plus réaliste qu'une connaissance globale de l'environnement.
+
+Résultat :
+À observer.
