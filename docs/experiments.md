@@ -89,3 +89,19 @@ Une perception locale produit un comportement plus réaliste qu'une connaissance
 
 Résultat :
 À observer.
+
+## Expérience 006 - Exploration hors perception
+
+Problème observé :
+L'organisme restait immobile lorsqu'aucune nourriture n'était détectée.
+
+Correction :
+Ajout d'un comportement d'exploration aléatoire lorsque la perception ne détecte aucune cible.
+
+Résultat :
+L'organisme alterne désormais entre :
+- exploration ;
+- poursuite d'une cible détectée.
+
+Observation :
+Le comportement paraît plus naturel et la survie augmente.
