@@ -46,6 +46,24 @@ function distance(a,b){
     return Math.hypot(a.x-b.x,a.y-b.y);
 }
 
+function findClosestFood() {
+
+    let closest = null;
+    let bestDistance = Infinity;
+
+    for(let food of foods){
+
+        let d = distance(bestiale, food);
+
+        if(d < bestDistance){
+            bestDistance = d;
+            closest = food;
+        }
+    }
+
+    return closest;
+}
+
 function update(){
 
     if(bestiale.energy <= 0){
