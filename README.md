@@ -12,3 +12,8 @@ Questions étudiées :
 
 Statut :
 Prototype exploratoire.
+
+## Documentation
+
+- Vision du projet : docs/vision.md
+- Journal d'expérimentation : docs/experiments.md
