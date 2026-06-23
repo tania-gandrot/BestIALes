@@ -42,3 +42,17 @@ Mesures possibles :
 - Temps de survie
 - Énergie moyenne
 - Nombre de nourritures consommées
+
+## Expérience 003 - Augmentation de la mobilité
+
+Modification :
+Amplitude du déplacement aléatoire :
+(Math.random()-0.5)*4
+→
+(Math.random()-0.5)*8
+
+Hypothèse :
+Une mobilité accrue augmente les chances de rencontrer de la nourriture.
+
+Résultat :
+À observer.
