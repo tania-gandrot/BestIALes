@@ -68,9 +68,6 @@ function findClosestFood() {
     return closest;
 }
 
-    return closest;
-}
-
 function update(){
 
     if(bestiale.energy <= 0){
@@ -79,8 +76,28 @@ function update(){
 
     bestiale.energy -= 0.1;
 
-    bestiale.x += (Math.random()-0.5)*8;
-    bestiale.y += (Math.random()-0.5)*8;
+   let target = findClosestFood();
+
+if(target){
+
+    let dx = target.x - bestiale.x;
+    let dy = target.y - bestiale.y;
+
+    let length = Math.hypot(dx, dy);
+
+    if(length > 0){
+
+        bestiale.x += dx / length * 2;
+        bestiale.y += dy / length * 2;
+    }
+
+}
+else{
+
+    bestiale.x += (Math.random()-0.5)*4;
+    bestiale.y += (Math.random()-0.5)*4;
+
+}
 
     bestiale.x = Math.max(0,Math.min(canvas.width,bestiale.x));
     bestiale.y = Math.max(0,Math.min(canvas.height,bestiale.y));
