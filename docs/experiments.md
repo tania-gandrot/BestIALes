@@ -1,123 +1,233 @@
-# Experiments
+# Carnet d'expériences — BestIAle
 
-## Expérience 001 - Organisme aléatoire
+Ce document retrace les expériences menées dans BestIAle.
 
-Objectif :
+Son objectif est de conserver une trace des hypothèses, des observations et des enseignements issus de chaque expérimentation.
+
+Le code appartient au dépôt GitHub.
+
+Ce carnet documente la démarche d'exploration.
+
+---
+
+# Campagne 1 — Acquisition des ressources
+
+## Question de recherche
+
+**Comment un agent autonome acquiert-il les ressources nécessaires à sa survie dans un environnement plus ou moins contraint ?**
+
+---
+
+## Expérience 1.1 — Déplacement aléatoire
+
+### Objectif
+
 Créer un organisme capable de survivre dans un environnement contenant de la nourriture.
 
-Description :
-L'organisme se déplace aléatoirement.
-Chaque déplacement consomme de l'énergie.
-Lorsqu'il rencontre une ressource, il récupère de l'énergie.
+### Hypothèse
 
-Résultat :
-✓ Organisme fonctionnel
-✓ Consommation d'énergie
-✓ Consommation de nourriture
-✓ Mort lorsque l'énergie atteint zéro
+Même sans perception, un agent peut survivre grâce à des déplacements aléatoires si les ressources sont suffisamment nombreuses.
 
-Observations :
-La survie dépend uniquement du hasard des déplacements.
+### Modification
 
-Questions suivantes :
-- Ajouter une perception ?
-- Ajouter une direction ?
-- Ajouter un comportement orienté ?
+Création d'un agent :
 
-## Expérience 002 - Augmentation des ressources
+* déplacement aléatoire ;
+* consommation d'énergie à chaque déplacement ;
+* récupération d'énergie lorsqu'une ressource est rencontrée ;
+* mort lorsque l'énergie atteint zéro.
 
-Hypothèse :
-Une plus grande densité de nourriture augmente la probabilité de survie d'un organisme se déplaçant aléatoirement.
+### Observations
 
-Modification :
-Passage de 50 à 200 unités de nourriture.
+* L'agent fonctionne correctement.
+* La survie dépend uniquement du hasard.
+* Les performances sont très variables selon les rencontres avec les ressources.
 
-Code :
-for(let i=0;i<200;i++)
+### Enseignement
 
-Résultat :
-À observer.
+Le hasard peut suffire dans un environnement favorable, mais il ne constitue pas une stratégie robuste lorsque les ressources deviennent plus rares.
 
-Mesures possibles :
-- Temps de survie
-- Énergie moyenne
-- Nombre de nourritures consommées
+### Décision
 
-## Expérience 003 - Augmentation de la mobilité
+➡️ Explorer l'influence de la quantité de nourriture disponible.
 
-Modification :
-Amplitude du déplacement aléatoire :
-(Math.random()-0.5)*4
-→
-(Math.random()-0.5)*8
+---
 
-Hypothèse :
-Une mobilité accrue augmente les chances de rencontrer de la nourriture.
+## Expérience 1.2 — Densité des ressources
 
-Résultat :
-À observer.
+### Hypothèse
 
-## Expérience 004 - Perception de la nourriture
+Une plus grande densité de nourriture augmente les chances de survie d'un agent se déplaçant au hasard.
 
-Objectif :
-Permettre à l'organisme d'identifier la ressource la plus proche car il échoue trop rapidement.
+### Modification
 
-Modification :
-Ajout de la fonction findClosestFood().
+Augmentation du nombre de ressources disponibles.
 
-Résultat :
-L'organisme dispose désormais d'une information sur son environnement.
+### État
 
-Observation :
-La perception existe mais n'influence pas encore le comportement.
+⏳ À observer.
 
-Prochaine étape :
-Utiliser cette information pour orienter le déplacement.
+### Mesures envisagées
 
-## Expérience 005 - Vision limitée
+* temps de survie ;
+* énergie moyenne ;
+* nombre de ressources consommées.
 
-Modification :
-La nourriture n'est détectée que dans un rayon de 100 pixels.
+### Décision
 
-Code :
-if(d > 100){
-    continue;
-}
+En attente des observations.
 
-Hypothèse :
-Une perception locale produit un comportement plus réaliste qu'une connaissance globale de l'environnement.
+---
 
-Résultat :
-À observer.
+## Expérience 1.3 — Mobilité
 
-## Expérience 006 - Exploration hors perception
+### Hypothèse
 
-Problème observé :
-L'organisme restait immobile lorsqu'aucune nourriture n'était détectée.
+Une plus grande mobilité augmente les chances de rencontrer une ressource.
 
-Correction :
-Ajout d'un comportement d'exploration aléatoire lorsque la perception ne détecte aucune cible.
+### Modification
 
-Résultat :
-L'organisme alterne désormais entre :
-- exploration ;
-- poursuite d'une cible détectée.
+Augmentation de l'amplitude des déplacements aléatoires.
 
-Observation :
-Le comportement paraît plus naturel et la survie augmente.
+### État
 
-## Expérience 007 - Réduction des ressources
+⏳ À observer.
 
-Modification :
-Nombre de nourritures :
-200 → 100
+### Mesures envisagées
 
-Hypothèse :
-La BestIAle devrait encore survivre grâce à sa capacité de perception et de poursuite.
+* distance parcourue ;
+* consommation énergétique ;
+* temps de survie.
 
-Résultat :
-À observer.
+### Décision
 
-Questions :
-- Existe-t-il un seuil critique de nourriture ?
-- À partir de quelle densité la BestIAle ne peut-elle plus compenser son coût énergétique ?
+En attente des observations.
+
+---
+
+## Expérience 1.4 — Perception
+
+### Objectif
+
+Permettre à l'agent de détecter les ressources situées dans son environnement.
+
+### Hypothèse
+
+La perception constitue une information utile, mais ne modifie pas le comportement tant qu'elle n'est pas exploitée.
+
+### Modification
+
+Ajout d'une perception des ressources proches.
+
+### Observations
+
+* L'agent dispose désormais d'informations sur son environnement.
+* Son comportement reste inchangé.
+
+### Enseignement
+
+Percevoir n'est pas agir.
+
+Une information n'a de valeur que si elle influence la prise de décision.
+
+### Décision
+
+➡️ Utiliser cette information pour orienter les déplacements.
+
+---
+
+## Expérience 1.5 — Perception locale
+
+### Hypothèse
+
+Une perception limitée produit des comportements plus réalistes qu'une connaissance parfaite de l'environnement.
+
+### Modification
+
+Restriction de la portée de perception.
+
+### État
+
+⏳ À observer.
+
+### Mesures envisagées
+
+* taux de survie ;
+* distance parcourue ;
+* fréquence de détection des ressources.
+
+### Décision
+
+En attente des observations.
+
+---
+
+## Expérience 1.6 — Exploration
+
+### Problème observé
+
+Lorsque l'agent ne détectait aucune ressource, il cessait de se déplacer.
+
+### Hypothèse
+
+L'alternance entre exploration et poursuite constitue une stratégie plus efficace que l'immobilité.
+
+### Modification
+
+Ajout d'un comportement d'exploration lorsqu'aucune ressource n'est détectée.
+
+### Observations
+
+* L'agent alterne entre exploration et poursuite.
+* Le comportement paraît plus naturel.
+* La durée de survie augmente.
+
+### Enseignement
+
+Un agent autonome doit disposer d'une stratégie en absence d'information.
+
+L'exploration constitue un comportement à part entière.
+
+### Décision
+
+✅ Hypothèse confirmée.
+
+---
+
+## Expérience 1.7 — Rareté des ressources
+
+### Hypothèse
+
+L'agent devrait conserver un avantage grâce à sa perception malgré une diminution des ressources disponibles.
+
+### Modification
+
+Réduction de la quantité de nourriture.
+
+### État
+
+⏳ À observer.
+
+### Questions ouvertes
+
+* Existe-t-il un seuil critique de ressources ?
+* À partir de quelle densité l'agent ne peut-il plus compenser son coût énergétique ?
+* Les bénéfices de la perception diminuent-ils lorsque les ressources deviennent très rares ?
+
+### Décision
+
+En attente des observations.
+
+---
+
+# Connaissances acquises
+
+À ce stade, plusieurs enseignements commencent à émerger :
+
+* Un comportement aléatoire peut suffire dans un environnement favorable.
+* La perception seule n'améliore pas le comportement.
+* Une information doit être exploitée pour devenir utile.
+* L'exploration est un comportement essentiel lorsque l'environnement est incertain.
+* Les contraintes de l'environnement jouent un rôle aussi important que les capacités de l'agent.
+
+Ces résultats guideront les expériences suivantes de la campagne **Acquisition des ressources**.
