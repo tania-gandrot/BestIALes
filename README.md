@@ -1,17 +1,20 @@
 # BestIALes
-Laboratoire personnel d'organismes artificiels et de systèmes adaptatifs.
+Question
 
-Objectif :
-Explorer l'émergence de comportements adaptatifs à partir de règles simples.
+Comment un agent autonome trouve-t-il de l'eau lorsque les ressources deviennent rares ?
 
-Questions étudiées :
-- Comment un organisme perçoit-il son environnement ?
-- Comment apparaissent les stratégies de survie ?
-- Quels mécanismes favorisent l'adaptation ?
-- Que se passe-t-il lorsqu'on modifie les contraintes du milieu ?
+Hypothèse
 
-Statut :
-Prototype exploratoire.
+Un agent doté d'une perception locale et d'une mémoire simple survivra plus longtemps qu'un agent explorant au hasard.
+
+Ce que ce démonstrateur n'est PAS
+
+- Un jeu.
+- Un simulateur complet de vie artificielle.
+
+Objectif
+
+Construire le plus petit modèle permettant d'observer ce phénomène.
 
 ## Documentation
 
