@@ -12,11 +12,11 @@ BestIAle est le premier démonstrateur de **The TanIA's Lab**, un laboratoire in
 
 # Mission
 
-BestIAle est un laboratoire expérimental.
+BestIAle est une démarche expérimentale.
 
 Son objectif n'est pas de reproduire fidèlement la biologie réelle ni de recréer un simulateur de vie artificielle existant.
 
-Son objectif est de construire les modèles les plus simples possibles permettant d'explorer des questions scientifiques sur les comportements adaptatifs.
+Son objectif est de construire les modèles les plus simples possibles permettant d'explorer des hypothèses sur les comportements adaptatifs.
 
 Chaque version de BestIAle répond à une question précise.
 
@@ -90,7 +90,7 @@ BestIAle n'est pas :
 * une simulation réaliste de la nature ;
 * un projet visant à accumuler des fonctionnalités.
 
-Il est un démonstrateur scientifique.
+Il est un démonstrateur expérimental.
 
 ---
 
@@ -116,8 +116,8 @@ Le succès est une meilleure compréhension du système observé.
 * à l'influence de l'environnement ;
 * à l'émergence de comportements collectifs.
 
-Chaque campagne enrichira progressivement les connaissances du laboratoire **The Adaptive Machine**.
+Chaque campagne enrichira progressivement les connaissances du laboratoire **The TanIA's Lab**.
 
 BestIAle n'a pas vocation à être terminé.
 
-Il a vocation à rester un instrument d'exploration scientifique, évoluant au rythme des questions de recherche.
+Il a vocation à rester un instrument d'exploration, évoluant au rythme des questions de recherche.
