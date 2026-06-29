@@ -29,11 +29,10 @@ const ctx = canvas.getContext("2d");
 
 let foods = [];
 
-for(let i=0;i<100;i++){
-    foods.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height
-    });
+for(let i = 0; i < 100; i++){
+
+    foods.push(createFood());
+
 }
 
 let bestiale = {
@@ -41,6 +40,15 @@ let bestiale = {
     y: 250,
     energy: 100
 };
+
+function createFood() {
+    return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        age: 0,
+        lifetime: 300 + Math.random() * 600
+    };
+}
 
 function distance(a,b){
     return Math.hypot(a.x-b.x,a.y-b.y);
@@ -75,6 +83,20 @@ function update(){
     }
 
     bestiale.energy -= 0.1;
+    
+for(let i = foods.length - 1; i >= 0; i--){
+
+    foods[i].age++;
+
+    if(foods[i].age > foods[i].lifetime){
+
+        foods.splice(i,1);
+
+        foods.push(createFood());
+
+    }
+
+}
 
    let target = findClosestFood();
 
@@ -110,10 +132,7 @@ else{
 
             foods.splice(i,1);
 
-            foods.push({
-                x: Math.random()*canvas.width,
-                y: Math.random()*canvas.height
-            });
+            foods.push(createFood());
         }
     }
 }
